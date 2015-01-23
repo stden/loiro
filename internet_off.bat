@@ -28,6 +28,8 @@ if %CLASS%==30 (
   netsh interface ip set address name="Local Area Connection" static %MY% %MASK% %GATEWAY% 1
   netsh interface ip set address name="Подключение по локальной сети" static %MY% %MASK% %GATEWAY% 1
   netsh interface ip set address name="Подключение по локальной сети 2" static %MY% %MASK% %GATEWAY% 1
+  netsh interface ip set address name="Wireless Network Connection" static %MY% %MASK% %GATEWAY% 1
+ 
 )
 
 

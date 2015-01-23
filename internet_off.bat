@@ -1,5 +1,19 @@
 rem @echo off
 
+if defined CLASS ( 
+  if defined COMP (
+    goto setup
+  ) else (
+    echo Define COMP
+  )
+) else (
+    echo Define CLASS and COMP
+   goto exit
+)
+
+goto exit
+
+:setup
 set MY=10.%CLASS%.%COMP%.1
 set MASK=255.255.255.0
 set GATEWAY=10.1.1.1	
@@ -15,4 +29,7 @@ if %CLASS%==30 (
   netsh interface ip set address name="Подключение по локальной сети" static %MY% %MASK% %GATEWAY% 1
   netsh interface ip set address name="Подключение по локальной сети 2" static %MY% %MASK% %GATEWAY% 1
 )
+
+
+:exit
 pause
